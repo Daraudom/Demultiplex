@@ -1,7 +1,7 @@
 # Assignment the First
 
 ## Part 1
-1. Be sure to upload your Python script. Provide a link to it here:
+1. Be sure to upload your Python script. Provide a link to it here: [Python Script](./qual_dist.py)
 
 | File name | label | Read length | Phred encoding |
 |---|---|---|---|
@@ -12,10 +12,19 @@
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
-    2. [Read 1 Histogram](./qual_score_distribution_read1.png)
-    3. [Index 1 Histogram](./qual_score_distribution_read2.png)
-	4. [Index 2 Histogram](./qual_score_distribution_read3.png)
-	5. [Read 2 Histogram](./qual_score_distribution_read4.png)
+    	- [Read 1 Histogram](./qual_score_distribution_read1.png)
+    	- [Index 1 Histogram](./qual_score_distribution_read2.png)
+		- [Index 2 Histogram](./qual_score_distribution_read3.png)
+		- [Read 2 Histogram](./qual_score_distribution_read4.png)
+	2. The minimum per base quality score cutoff for the index is decided with Qscore>=30. I chose this because it's not extremely high where we risk disregarding certain reads, but it's also very conservative and ensures high confidence in base-call accuracy. Using the formula $P = 10^{-Q/10}$ for $Q=30$, the probability of one base being correct is roughly $0.999$. This means that for our 8 bp barcode, the probability of the entire barcode being correct is $0.999^{8}\approx0.992$. This is relatively very strong and conservative for demultiplexing.
+	3. Unknowns Counts:
+		```bash
+		zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | sed -n '2~4p' | grep -c "N"
+		3976613 unknowns
+
+		zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz | sed -n '2~4p' | grep -c "N"
+		3328051 unknowns
+		```
     
 ## Part 2
 1. Define the problem
