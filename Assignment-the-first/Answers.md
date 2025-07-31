@@ -5,15 +5,17 @@
 
 | File name | label | Read length | Phred encoding |
 |---|---|---|---|
-| 1294_S1_L008_R1_001.fastq.gz |  |  |  |
-| 1294_S1_L008_R2_001.fastq.gz |  |  |  |
-| 1294_S1_L008_R3_001.fastq.gz |  |  |  |
-| 1294_S1_L008_R4_001.fastq.gz |  |  |  |
+| 1294_S1_L008_R1_001.fastq.gz | read 1 |101  | Phred 33 |
+| 1294_S1_L008_R2_001.fastq.gz | index 1 | 8 | Phred 33 |
+| 1294_S1_L008_R3_001.fastq.gz | index 2 | 8 | Phred 33 |
+| 1294_S1_L008_R4_001.fastq.gz | read 2 | 101 | Phred 33 |
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
-    2. **YOUR ANSWER HERE**
-    3. **YOUR ANSWER HERE**
+    2. [Read 1 Histogram](./qual_score_distribution_read1.png)
+    3. [Index 1 Histogram](./qual_score_distribution_read2.png)
+	4. [Index 2 Histogram](./qual_score_distribution_read3.png)
+	5. [Read 2 Histogram](./qual_score_distribution_read4.png)
     
 ## Part 2
 1. Define the problem
